@@ -15,3 +15,19 @@ const getDatosGeneral = async (req, res) => {
 };
 
 module.exports = { getDatosGeneral };
+
+const getMantenimiento = async (req, res) => {
+    try {
+        const [rows] = await db.query(`
+            SELECT m.*, b.anos_activos 
+            FROM mantenimiento m
+            JOIN bicitaxis b ON m.placa_vehiculo = b.placa
+        `);
+        res.json(rows);
+    } catch (error) {
+        res.status(500).json({ error: 'Error al obtener mantenimiento' });
+    }
+};
+
+// No olvides agregarla al module.exports
+module.exports = { getDatosGeneral, getMantenimiento };

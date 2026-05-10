@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const biciRoutes = require('./routes/biciRoutes');
-require('dotenv').config({ path: '../../.env' });
+require('dotenv').config();
 
 const app = express();
 

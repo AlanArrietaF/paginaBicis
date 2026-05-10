@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicitaxis CDMX</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">BICITAXIS CDMX</a>
+	    <div class="menu-items">
+    		<a href="index.html">Home</a>
+    		<a href="conductores.html">Conductores</a>
+    		<a href="historial.html">Historial</a>
+	    </div>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>SUSTENTABILIDAD,<br>EN TUS CAMINOS</h1>
+        <p>Recorridos cortos en bicicleta disponibles para ti</p>
+	<a href="conductores.html" style="text-decoration: none;">
+            <button class="btn-main">CONSULTAR ↗</button> 
+        </a>
+    </section>
+
+    <section id="conductores" class="section-pink">
+        <div class="header-section">
+            <h2>300 Choferes</h2>
+            <p>Rankeados por ti</p>
+        </div>
+        <div id="data-container" class="grid-conductores">
+            </div>
+    </section>
+
+    <section id="historial" class="section-green">
+        <div class="header-section">
+            <h2>Servicio 24/7</h2>
+            <p>Mantenimiento recurrente en todos los equipos.</p>
+        </div>
+        <div id="historial-container" class="grid-mantenimiento">
+            </div>
+    </section>
+
+    <script src="js/api.js"></script>
+</body>
+</html>

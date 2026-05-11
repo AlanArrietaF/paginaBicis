@@ -13,7 +13,6 @@ Sistema integral de gestión para unidades de bicitaxis en la Ciudad de México.
 | Home / Hero Section | Gestión de Conductores | Historial de Mantenimiento |
 | :---: | :---: | :---: |
 | ![Home](frontend/src/assets/preview_home.png) | ![Conductores](frontend/src/assets/preview_conductores.png) | ![Historial](frontend/src/assets/preview_historial.png) |
-> *Nota: Reemplaza las rutas de las imágenes con capturas reales de tu proyecto una vez que las subas a tu carpeta de assets.*
 
 ---
 

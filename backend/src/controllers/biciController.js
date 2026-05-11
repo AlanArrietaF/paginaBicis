@@ -2,32 +2,36 @@ const db = require('../config/db');
 
 const getDatosGeneral = async (req, res) => {
     try {
-        // Hacemos un JOIN para traer la info del conductor y su bicitaxi al mismo tiempo
+        // Unimos conductores con bicitaxis para tener la placa disponible
         const [rows] = await db.query(`
-            SELECT c.nombre, c.sede, c.ranking, c.resenas, b.placa, b.anos_activos 
+            SELECT c.*, b.placa, b.anos_activos 
             FROM conductores c
             JOIN bicitaxis b ON c.placa_vehiculo = b.placa
         `);
         res.json(rows);
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Error al obtener los datos' });
     }
 };
 
-module.exports = { getDatosGeneral };
-
 const getMantenimiento = async (req, res) => {
     try {
+        // Unimos mantenimiento con conductores para saber quién maneja la unidad
         const [rows] = await db.query(`
-            SELECT m.*, b.anos_activos 
+            SELECT m.*, c.nombre as nombre_conductor
             FROM mantenimiento m
-            JOIN bicitaxis b ON m.placa_vehiculo = b.placa
+            JOIN conductores c ON m.placa_vehiculo = c.placa_vehiculo
         `);
         res.json(rows);
     } catch (error) {
+        console.error(error);
         res.status(500).json({ error: 'Error al obtener mantenimiento' });
     }
 };
 
-// No olvides agregarla al module.exports
-module.exports = { getDatosGeneral, getMantenimiento };
+// Exportamos ambas funciones al final en un solo objeto
+module.exports = { 
+    getDatosGeneral, 
+    getMantenimiento 
+};

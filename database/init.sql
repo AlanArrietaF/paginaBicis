@@ -1,3 +1,5 @@
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
 -- Crear la base de datos si no existe (aunque Docker la crea por el env, es buena práctica)
 CREATE DATABASE IF NOT EXISTS bicitaxis;
 USE bicitaxis;

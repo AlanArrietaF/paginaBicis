@@ -1,12 +1,10 @@
-k/* ==========================================================================
-   Fuentes y Variables (Brutalismo Urbano)
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
+/* --- VARIABLES DE COLOR --- */
 :root {
-    --bg-black: #121212;      /* Negro mate profundo del video */
-    --pink-figma: #FF8A8A;    /* Rosa chicle de conductores */
-    --green-figma: #A3FFAC;   /* Verde menta de historial */
+    --bg-black: #121212;
+    --pink-figma: #FF8A8A;
+    --green-figma: #A3FFAC;
     --white: #FFFFFF;
 }
 
@@ -23,47 +21,44 @@ body {
     overflow-x: hidden;
 }
 
-/* ==========================================================================
-   1. BARRA DE NAVEGACIÓN (IDÉNTICA AL VIDEO)
-   ========================================================================== */
-/* Corrección de Navegación */
+/* --- BARRA DE NAVEGACIÓN --- */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 5%;
-    position: absolute; /* Se monta sobre el Hero en el Home */
+    padding: 30px 5%;
+    position: absolute; /* Para el Home (flota sobre la foto) */
     width: 100%;
-    z-index: 1000;
     background: transparent;
+    z-index: 1000;
 }
 
-/* Clase para forzar fondo oscuro en nav si estás en páginas internas (Opcional) */
+/* Clase especial para Conductores e Historial */
 .nav-interna {
-    position: relative; /* Ya no flota sobre el contenido */
+    position: relative; /* Empuja el contenido hacia abajo */
     background-color: var(--bg-black);
+    padding: 25px 5%;
 }
 
-/* Asegurar que el contenedor principal de conductores tenga el color correcto */
-.section-pink {
-    background-color: var(--pink-figma) !important;
-    color: var(--bg-black);
-    min-height: 100vh;
-    width: 100%;
-    padding: 60px 5% 100px 5%; /* Bajamos un poco el padding */
-}/* En tu video usas "Menu" en la esquina derecha en móviles/tablets */
+.logo { 
+    font-weight: 900; 
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    text-decoration: none; 
+    color: var(--white) !important; 
+    letter-spacing: -0.5px;
+}
+
 .menu-items a { 
     margin-left: 30px; 
     text-decoration: none; 
-    color: var(--white); 
+    color: var(--white) !important; 
     font-size: 1rem; 
     font-weight: 700;
     text-transform: uppercase;
 }
 
-/* ==========================================================================
-   2. HERO SECTION (SUSTENTABILIDAD EN TUS CAMINOS)
-   ========================================================================== */
+/* --- HOME (HERO) --- */
 .hero {
     height: 100vh;
     display: flex;
@@ -72,18 +67,19 @@ nav {
     align-items: center;
     text-align: center;
     padding: 0 10%;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../assets/zocalo.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('../assets/zocalo.jpeg');
     background-size: cover;
     background-position: center;
 }
 
 .hero h1 { 
-    font-size: 5rem; /* Letra masiva del diseño */
+    font-size: 5rem;
     font-weight: 900; 
     text-transform: uppercase;
     line-height: 0.95; 
     letter-spacing: -2px;
     max-width: 900px;
+    color: var(--white);
 }
 
 .btn-main {
@@ -97,32 +93,25 @@ nav {
     font-size: 0.9rem;
     text-transform: uppercase;
     cursor: pointer;
-    letter-spacing: 1px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
 }
 
-/* ==========================================================================
-   3. SECCIONES DE COLOR (CONDUCTORES Y MANTENIMIENTO)
-   ========================================================================== */
+/* --- SECCIONES INTERNAS --- */
 .section-pink {
-    background-color: var(--pink-figma);
+    background-color: var(--pink-figma) !important;
     color: var(--bg-black);
     min-height: 100vh;
     width: 100%;
-    padding: 100px 5%;
+    padding: 60px 5% 100px 5%;
 }
 
 .section-green {
-    background-color: var(--green-figma);
+    background-color: var(--green-figma) !important;
     color: var(--bg-black);
     min-height: 100vh;
     width: 100%;
-    padding: 100px 5%;
+    padding: 60px 5% 100px 5%;
 }
 
-/* Títulos de sección gigantes */
 .header-section h1 {
     font-size: 5.5rem;
     font-weight: 900;
@@ -139,9 +128,7 @@ nav {
     color: rgba(0, 0, 0, 0.7);
 }
 
-/* ==========================================================================
-   4. COMPONENTES: CARDS BRUTALISTAS
-   ========================================================================== */
+/* --- TARJETAS --- */
 .grid-conductores {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -149,13 +136,12 @@ nav {
     margin-top: 50px;
 }
 
-/* Tarjeta limpia, bordes definidos sin sombras tradicionales */
 .conductor-card {
     background: var(--white);
     color: var(--bg-black);
     padding: 35px;
-    border-radius: 32px; /* Súper redondeadas como el video */
-    border: 3px solid var(--bg-black); /* Borde sólido brutalista */
+    border-radius: 32px;
+    border: 3px solid var(--bg-black);
 }
 
 .conductor-card h3 {
@@ -166,7 +152,6 @@ nav {
     margin-bottom: 15px;
 }
 
-/* Tarjeta de Historial (Bloque Negro) */
 .mantenimiento-card {
     background: var(--bg-black);
     color: var(--green-figma);

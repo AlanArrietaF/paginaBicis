@@ -16,21 +16,57 @@
     </div>
 </nav>
 
-<div class="section-pink">
-    <div class="header-section">
-        <h1>NUESTROS<br>CONDUCTORES</h1>
-        <p>Siente seguridad, confianza y profesionalismo.</p>
+<div class="hero-conductores">
+        <div class="hero-content">
+            <h1>Siente seguridad, confianza, profesionalismo, con todos nuestros conductores</h1>
+            <div class="features-grid">
+                <div>
+                    <h3>Datos actualizados</h3>
+                    <p>Mejora la salud, seguridad y conectividad en nuestros recorridos urbanos.</p>
+                </div>
+                <div>
+                    <h3>Encuentra tu servicio</h3>
+                    <p>Fomentando la cultura de andar en bici como una alternativa viable.</p>
+                </div>
+                <div>
+                    <h3>Comenta tu experiencia</h3>
+                    <p>Creemos en el poder de la acción colectiva y el involucramiento de la comunidad.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div id="data-container" class="grid-conductores">
+<div class="section-pink">
+        <div class="header-section" style="text-align: center;">
+            <h1 style="font-size: 6rem; line-height: 0.9;">ENCUENTRA TU<br>CONDUCTOR</h1>
         </div>
-</div>
-	<section class="footer-call-to-action">
-    		<p>¿Quieres conocer el estado técnico de nuestras unidades?</p>
-    	<a href="historial.html">
-        	<button class="btn-secondary">VER HISTORIAL DE MANTENIMIENTO ↗</button>
-    	</a>
-	</section>
+        <div id="data-container" class="grid-conductores">
+            </div>
+    </div>
+
+    <div id="resenas" class="section-black-reviews">
+        <div class="header-section">
+            <h1 style="font-size: 6rem; line-height: 0.9; color: var(--white);">Reseñas</h1>
+            <p style="color: rgba(255,255,255,0.7);">Espacio para escribir tu comentario</p>
+        </div>
+        
+        <div class="review-form-container">
+            <form id="form-resena" class="brutal-form">
+                <label>Selecciona a tu conductor:</label>
+                <select id="select-conductor" required>
+                    <option value="">Cargando base de datos...</option>
+                </select>
+
+                <label>Deja tu comentario:</label>
+                <textarea id="texto-resena" rows="5" placeholder="El mejor servicio..." required></textarea>
+
+                <button type="submit" class="btn-main" style="width: fit-content;">PUBLICAR COMENTARIO ↗</button>
+            </form>
+            
+            <div id="mensaje-exito" class="comentario-exito" style="display: none;"></div>
+        </div>
+    </div>
+
     <script src="js/api.js"></script>
 </body>
 </html>

@@ -6,9 +6,11 @@ async function cargarConductores() {
         const datos = await res.json();
 
         const container = document.getElementById('data-container');
+	const selectElement = document.getElementById('select-conductor');
         if (!container) return;
 
         container.innerHTML = '';
+	if (selectElement) selectElement.innerHTML = '<option vlaue="">Elige a tu conductor </option>'; 
         
         // Validación: Solo recorre si 'datos' es una lista
         if (Array.isArray(datos)) {
@@ -23,12 +25,47 @@ async function cargarConductores() {
                         <p class="resena">"${c.resenas}"</p>
                     </div>
                 `;
+	if (selectElement){
+		selectElement.innerHTML += `<option value="${c.nombre}">${c.nombre} (Unidad: ${c.placa})</option>`;
+	 }
             });
         }
     } catch (e) {
         console.error("Error cargando conductores:", e);
     }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // ... lo que ya tenías para cargar las páginas ...
+    const path = window.location.pathname;
+    if (path.includes('conductores.html')) {
+        cargarConductores();
+    } else if (path.includes('historial.html')) {
+        cargarHistorial();
+    }
+
+    // Funcionalidad del formulario
+    const formResena = document.getElementById('form-resena');
+    if (formResena) {
+        formResena.addEventListener('submit', (e) => {
+            e.preventDefault(); // Evita que la página recargue
+            
+            const conductor = document.getElementById('select-conductor').value;
+            const comentario = document.getElementById('texto-resena').value;
+            const mensajeDiv = document.getElementById('mensaje-exito');
+
+            // Simula guardarlo mostrando el texto en pantalla
+            mensajeDiv.style.display = 'block';
+            mensajeDiv.innerHTML = `
+                <h4 style="color: var(--green-figma); margin-bottom: 5px;">¡Gracias por tu feedback!</h4>
+                <p>Tu comentario para <strong>${conductor}</strong> se mostrará pronto:</p>
+                <p style="font-style: italic; margin-top: 10px;">"${comentario}"</p>
+            `;
+            
+            // Limpia el formulario
+            formResena.reset();
+        });
+    }
+});
 
 async function cargarHistorial() {
     try {

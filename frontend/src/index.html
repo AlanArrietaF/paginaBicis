@@ -8,43 +8,53 @@
     <link rel="stylesheet" href="css/global.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="#" class="logo">BICITAXIS CDMX</a>
-	    <div class="menu-items">
-    		<a href="index.html">Home</a>
-    		<a href="conductores.html">Conductores</a>
-    		<a href="historial.html">Historial</a>
-	    </div>
-        </nav>
-    </header>
+    <nav>
+        <a href="index.html" class="logo">BICITAXIS CDMX</a>
+        <div class="menu-items">
+            <a href="index.html">HOME</a>
+            <a href="conductores.html">CONDUCTORES</a>
+            <a href="historial.html">HISTORIAL</a>
+        </div>
+    </nav>
 
-    <section id="inicio" class="hero">
+    <div class="hero">
         <h1>SUSTENTABILIDAD,<br>EN TUS CAMINOS</h1>
-        <p>Recorridos cortos en bicicleta disponibles para ti</p>
-	<a href="conductores.html" style="text-decoration: none;">
-            <button class="btn-main">CONSULTAR ↗</button> 
-        </a>
-    </section>
+        <p style="margin-top: 15px; font-size: 1.2rem;">Recorridos cortos en bicicleta disponibles para ti</p>
+        <a href="#mapa-bici" class="btn-main">CONSULTAR ↗</a>
+    </div>
 
-    <section id="conductores" class="section-pink">
-        <div class="header-section">
-            <h2>300 Choferes</h2>
+    <section class="split-section">
+        <div class="split-left">
+            <h2>300<br>Choferes</h2>
             <p>Rankeados por ti</p>
+            <a href="conductores.html" class="btn-pink">CONDUCTORES</a>
         </div>
-        <div id="data-container" class="grid-conductores">
-            </div>
-    </section>
-
-    <section id="historial" class="section-green">
-        <div class="header-section">
-            <h2>Servicio 24/7</h2>
+        <div class="split-right">
+            <h2>Servicio<br>24/7</h2>
             <p>Mantenimiento recurrente en todos los equipos.</p>
+            <a href="historial.html" class="btn-dark">HISTORIAL ↗</a>
         </div>
-        <div id="historial-container" class="grid-mantenimiento">
-            </div>
     </section>
 
+    <section class="home-pink-banner">
+        <h2>El mejor servicio para todo público.<br>Deja un comentario al conductor que te atendió.</h2>
+        <a href="conductores.html" class="btn-dark-green">CONDUCTORES ↗</a>
+    </section>
+
+    <section id="mapa-bici" class="map-section">
+        <h2 class="map-title">PUNTOS DE SERVICIO</h2>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d60205.47464048825!2d-99.2001221!3d19.4270245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1scicloestaciones%20cdmx!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx" 
+                width="100%" 
+                height="600" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
     <script src="js/api.js"></script>
 </body>
 </html>
